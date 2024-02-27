@@ -34,7 +34,7 @@ mysql> GRANT ALL PRIVILEGES ON *.* TO 'dbuser'@'%';
 
 Use the script at /database/login-demo-dump.sql to create a database and a table for the web app.
 
-Update the /credentials/mysql.json.
+Set the username and password in /credentials/mysql.json.
 
 ## TODO
 
