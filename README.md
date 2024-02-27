@@ -38,4 +38,6 @@ Set the username and password in /credentials/mysql.json.
 
 ## TODO
 
-- connect web app to mysql db 
+- fix web app paths
+- make fully self contained with working web app as part of container
+- see https://www.howtogeek.com/devops/how-to-run-mysql-in-a-docker-container/ 
