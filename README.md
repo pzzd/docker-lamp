@@ -37,7 +37,7 @@ Use the script at /database/login-demo-dump.sql to create a database and a table
 Set the username and password in /credentials/mysql.json.
 
 ## TODO
-
+- connect with mysqli
 - fix web app paths
 - make fully self contained with working web app as part of container
 - see https://www.howtogeek.com/devops/how-to-run-mysql-in-a-docker-container/ 
