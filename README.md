@@ -36,8 +36,22 @@ Use the script at /database/login-demo-dump.sql to create a database and a table
 
 Set the username and password in /credentials/mysql.json.
 
+## Connect app to database
+
+Get the mysql IP address inside the docker container:
+```
+docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' lamp-db-1
+172.21.0.2
+```
+
+Update /html/not-so-great-login-demo/credentials/mysql.json thusly:
+```
+"servername": "172.21.0.2:3306",
+```  
+You have to do this every time you do `docker compose up` because the IP address will change.
+
 ## TODO
-- connect with mysqli
+- connect with mysqli with a relialbe ip address?
 - fix web app paths
 - make fully self contained with working web app as part of container
 - see https://www.howtogeek.com/devops/how-to-run-mysql-in-a-docker-container/ 

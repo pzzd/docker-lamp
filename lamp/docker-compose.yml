@@ -13,6 +13,8 @@ services:
       - 443:443
     volumes:
       - ../html:/var/www/html
+    environment:
+     - DB_HOST=dbs
     configs:
       - source: apache-vhosts
         target: /etc/apache2/sites-available/000-default.conf
