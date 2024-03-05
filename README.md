@@ -13,7 +13,12 @@ None of this code is production-ready. Please use with caution.
 
 ## Deploy the LAMP stack
 
-Clone this repo into a dir on your laptop. cd into /lamp dir, then run `docker compose up -d`.
+Clone this repo into a dir on your laptop. Cd into /lamp dir. Create an empty apache/vhosts.conf file and then build the Docker containers.
+```
+cd lamp
+touch apache/vhosts.conf
+docker compose up -d
+```
 
 ### Control the LAMP stack
 
@@ -69,6 +74,7 @@ Update /html/not-so-great-login-demo/credentials/mysql.json thusly:
 You have to do this every time you do `docker compose up` because the IP address will change.
 
 ## TODO
+- figure out why i need apache/vhosts.conf
 - connect with mysqli with a fixed ip address?
 - fix web app paths
 - make fully self contained with working web app as part of container
