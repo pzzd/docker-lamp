@@ -69,23 +69,27 @@ The web app should be running at http://localhost/not-so-great-login-demo/webapp
 
 #### Create the app database
 
-Use the script at /database/login-demo-dump.sql to create a database and a table for the web app.
-
-Set the username and password in /credentials/mysql.json.
+Use the script at /database/login-demo-dump.sql to create a database and a table for the web app in Docker Desktop.
 
 #### Connect the app to the database
 
-Get the mysql IP address inside the docker container:
+Get the mysql IP address inside the docker container. You have to do this every time you do `docker compose up` because the IP address will change.
 ```
 docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' lamp-db-1
 172.21.0.2
 ```
 
-Update /html/not-so-great-login-demo/credentials/mysql.json thusly:
+Update /html/not-so-great-login-demo/credentials/mysql.json thusly. The servername port will always be 3306. Use the real password for dbpass.
 ```
-"servername": "172.21.0.2:3306",
+{
+        "servername": "172.21.0.2:3306",
+        "username": "dbuser",
+        "password": "XXXXX",
+        "schema": "logindemo"
+}
 ```  
-You have to do this every time you do `docker compose up` because the IP address will change.
+
+
 
 ## TODO
 - figure out why i need apache/vhosts.conf
