@@ -20,6 +20,8 @@ touch apache/vhosts.conf
 docker compose up -d
 ```
 
+If you use Docker Desktop, check everything out. The container should be called 'lamp'.
+
 ### Control the LAMP stack
 
 ```
