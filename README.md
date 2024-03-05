@@ -53,7 +53,19 @@ You can clone your own PHP web app into /html now. You might need to fiddle with
 
 ### A specific example 
 
-Want to try my login-demo? You'll need [Composer](http://getcomposer.org) to install dependencies. Clone https://github.com/pzzd/not-so-great-login-demo into /html/not-so-great-login-demo, cd into not-so-great-login-demo, and run `composer install`.
+Want to try my login-demo? You'll need [Composer](http://getcomposer.org) to install dependencies. 
+
+#### Deploy the app code
+Clone https://github.com/pzzd/not-so-great-login-demo into /html/not-so-great-login-demo. Install dependencies.
+```
+cd into not-so-great-login-demo
+git checkout docker-lamp
+composer install
+```
+
+The web app should be running at http://localhost/not-so-great-login-demo/webapp/ with some evidence that stylesheets are applied.
+
+
 
 #### Create the app database
 
