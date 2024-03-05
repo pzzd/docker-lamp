@@ -89,6 +89,7 @@ Update /html/not-so-great-login-demo/credentials/mysql.json thusly. The serverna
 }
 ```  
 
+Go to http://localhost/not-so-great-login-demo/webapp and create an account. This app saves email files to /inbox; in there you will see an account-creation confirmation with a confirmation link. If you are able to create and confirm and account, and log in, it is working!
 
 
 ## TODO
