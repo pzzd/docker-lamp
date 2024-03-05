@@ -1,9 +1,15 @@
-I have lifted most of the underlying scripts from https://github.com/jasonmccreary/local-docker-stack, and changed only docker_compose.yml for my purposes.
+# docker-lamp
 
-The structure of this projet is the following:
+This is a project for running a PHP and MySQL app from Docker containers. The LAMP stack is defined in docker-composer.yml. Directories for external volumes are already defined, so you only need to run the containers, deploy your PHP code to the right place, and wire the web app to the database.
+
+I have lifted most of the LAMP set-up scripts from https://github.com/jasonmccreary/local-docker-stack, and changed only docker_compose.yml for my purposes.
+
+The structure of this project is the following:
 - data: An external volume for mysql data. This will fill automatically when you create a database, and the data will persist when you shut down the Docker container.
 - html: An external volume for PHP code. There is a single HTML file here. You can clone a PHP app repo here too.
 - lamp: A directory for holding the Docker container info and scripts.
+
+None of this code is production-ready. Please use with caution.
 
 ## Deploy the LAMP stack
 
@@ -42,13 +48,13 @@ You can clone your own PHP web app into /html now. You might need to fiddle with
 
 Want to try my login-demo? You'll need [Composer](http://getcomposer.org) to install dependencies. Clone https://github.com/pzzd/not-so-great-login-demo into /html/not-so-great-login-demo, cd into not-so-great-login-demo, and run `composer install`.
 
-#### Start the app database
+#### Create the app database
 
 Use the script at /database/login-demo-dump.sql to create a database and a table for the web app.
 
 Set the username and password in /credentials/mysql.json.
 
-#### Connect app to database
+#### Connect the app to the database
 
 Get the mysql IP address inside the docker container:
 ```
